@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>常用網絡收費平台Paypal和Stripe的比較</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
+  </head>
+  <body>
+    <main class="black-80 fw5 pa3 pa4-m ph5-l pv4-l lh-copy">
+      <h1 class="f1 tc">常用網絡收費平台Paypal和Stripe的比較</h1>
+      <p>Paypal誕生於1998年，是一款老牌的網上支付系統，特別是2002年被ebay收購了之後，基本上成了ebay的官方支付平台。相比較而言，Stripe是後起之秀，成立於2011年，至今只有五年多一點的時間，但因為它比較專注於網絡在線支付的應用（但相應的一個缺點就是沒有提供線下支付的功能），因此從一出現就吸引了廣大網站開發者的注意。</p>
+      <p>下面就大致比較一下兩者各方面的情況</p>
+      <h2 class="f2 blue">開設建立賬戶（Set up）</h2>
+      <p>從下面的圖中可以看到，開通Stripe的過程要比Paypal要簡單得多。</p>
+      <p>Paypal <br>
+      <img src="http://robmclarty.com/system/pictures/sources/25/paypal-signup-process_large.jpg?1368208397" alt="Paypal" title=""></p>
+      <p>Stripe <br>
+      <img src="http://robmclarty.com/system/pictures/sources/26/stripe-signup-process_large.jpg?1368208427" alt="Stripe" title=""></p>
+      <h2 class="f2 blue">後台管理</h2>
+      <p><img src="http://robmclarty.com/system/pictures/sources/28/stripe-vs-paypal-dashboards_large.jpg?1368208474" alt="Paypal Stripe Backend" title=""></p>
+      <p>從上面的圖中可以看到，Paypal的後台只是提供最基本的表格記賬式管理界面，Stripe的管理界面中很多數據已經用圖表化顯示，更加現代直觀。</p>
+      <h2 class="f2 blue">使用費用</h2>
+      <p>兩者的基本使用費用比較相近，但有些費用Stripe比較優惠。</p>
+      <table class="w-100 center" cellspacing="0">
+        <thead>
+          <tr>
+            <th class="fw6 ba b--black-20 tl pa2">項目</th>
+            <th class="fw6 ba b--black-20 tl pa2">功能</th>
+            <th class="fw6 ba b--black-20 tl pa2">Paypal</th>
+            <th class="fw6 ba b--black-20 tl pa2">Stripe</th>
+          </tr>
+        </thead>
+        <tbody class="lh-copy">
+          <tr>
+            <td class="ba b--black-20 tl pa2">Monthly Fee</td>
+            <td class="ba b--black-20 tl pa2">賬戶月費</td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>0<sup>1</sup></td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>0</td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">Transaction Fee</td>
+            <td class="ba b--black-20 tl pa2">使用各類信用卡收款時扣除的費用</td>
+            <td class="ba b--black-20 tl pa2">2.9%+<span>$</span>0.30</td>
+            <td class="ba b--black-20 tl pa2">2.9%+<span>$</span>0.30</td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">Nonprofit Discount</td>
+            <td class="ba b--black-20 tl pa2">上一項費用對非營利組織的優惠</td>
+            <td class="ba b--black-20 tl pa2">2.2%+<span>$</span>0.30</td>
+            <td class="ba b--black-20 tl pa2">Discount<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">Refund</td>
+            <td class="ba b--black-20 tl pa2">退回用戶支付的款項收取的費用</td>
+            <td class="ba b--black-20 tl pa2">視金額的不同略有變化</td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>0<sup>3</sup></td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">International Card Fee</td>
+            <td class="ba b--black-20 tl pa2">收取非美國銀行發行的國際信用卡時收取的額外費用</td>
+            <td class="ba b--black-20 tl pa2">1%（因此總費用是3.9%+<span>$</span>0.30）</td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>0（總費用仍然是2.9%+<span>$</span>0.30）</td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">Currency Conversion Fee</td>
+            <td class="ba b--black-20 tl pa2">收取非美元貨幣時的匯率轉換費用</td>
+            <td class="ba b--black-20 tl pa2">2.5%</td>
+            <td class="ba b--black-20 tl pa2">2%</td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">ACH Fee</td>
+            <td class="ba b--black-20 tl pa2">不使用信用卡而直接從銀行賬戶轉賬付費收取的費用</td>
+            <td class="ba b--black-20 tl pa2">如果用戶沒有開通Paypal賬戶，則不支持ACH直接銀行轉賬</td>
+            <td class="ba b--black-20 tl pa2">0.8%（capped at <span>$</span>5）<sup>4</sup></td>
+          </tr>
+          <tr>
+            <td class="ba b--black-20 tl pa2">Chargeback</td>
+            <td class="ba b--black-20 tl pa2">就是如果用戶通過信用卡銀行Dispute charge，商家需要支付的額外費用</td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>20</td>
+            <td class="ba b--black-20 tl pa2"><span>$</span>15 or <span>$</span>0<sup>5</sup></td>
+          </tr>
+        </tbody>
+      </table>
+      <ol class="f6">
+        <li>Paypal的有些高級功能必須支付$30/月升級成高級用戶才能使用</li>
+        <li>Stripe的網站上有提到對NPO的優惠費率，但沒有明確寫出是多少，可能會根據每月收款金額數量的不同而變化。</li>
+        <li>也就是說如果商家全額退款給用戶，Stripe會將之前刷卡時收取的費用（一般是2.9%+<span>$</span>0.30）全部退還給商家。</li>
+        <li>如果因為用戶賬戶餘額不足等原因導致ACH轉賬失敗，會收取<span>$</span>4的額外費用。</li>
+        <li>如果Dispute最後的裁決是商家勝訴，則Stripe不收取chargeback費用（If the customer’s bank resolves the dispute in your favor, the fee is fully refunded）</li>
+      </ol>
+      <h2 class="f2 blue">支付方式</h2>
+      <p>Paypal普通賬戶只支持最基本的四大品牌Visa, MasterCard, American Express和Discover</p>
+      <p>Stripe除了這四大最基本的品牌之外，還支持JCB，Dinner Club和Bitcoin（比特幣），Alipay（中國最流行的手機支付方式“支付寶”），Apple Pay等其它方式。而且網站還在不斷開發對更多支付方式的支持。</p>
+      <p>收到用戶支付的款項後，Paypal一般在一個工作日後會deposit到你Paypal賬戶的balance裡面。但如果要從Paypal轉到相關聯的銀行賬戶，則需要另外兩到三個工作日。如果你忘記及時把錢從Paypal裡面轉出來，萬一出現dispute或者其它狀況導致Paypal暫時凍結你的賬戶，甚至關掉你的Paypal賬戶，那裡面沒有轉出來的資金將會暫時無法使用，需要跟Paypal交涉很久才能拿到錢。</p>
+      <p>而Stripe在收到款項後會在兩個工作日內自動轉到你的銀行賬戶裡。不會hold你的錢在他的賬戶裡。相對來說風險要小一點。</p>
+      <h2 class="f2 blue">網站使用</h2>
+      <p>Paypal的免月費基本用戶只能使用它提供的標準付費按鈕，而且其設計已經比較老舊，如果想要個性化定制按鈕的式樣使其與你網站的整體風格更加協調，則必須支付每月$30的費用升級成高級賬戶。在網站上付費時，用戶按下Paypal的付費按鈕後，會暫時離開用戶訪問的網站前往Paypal的網站，付費成功後再轉回原本的網站。但如果付費中出現問題，或者用戶暫時不想付費之類的狀況，可能會使用戶離開網站後無法成功返回。因為所有付款過程都在Paypal的網站上完成，網站這邊無法保存任何與用戶支付有關的信息。</p>
+      <p>而Stripe從一開始就是專門方便給網站開發人員使用的，所以可以使用的功能更加強大，對多種流行的開發程式語言都有很好的支持。因此可以更方便地定制以適合自己網站的要求。而且整個支付過程中不用離開網站。因此網站可以選擇保存用戶的基本信息，方便下次付款時不用重複輸入卡號等信息。（但具體與信用卡相關的敏感信息仍然保存在Stripe的網站上，自己的網站可以選擇保存用戶的基本信息，下次可以憑此信息從Stripe網站上獲取上次用戶支付的方式，這樣自己的網站不用承擔保存信用卡數據洩露的風險）</p>
+      <h2 class="f2 blue">結論</h2>
+      <p>兩者都是目前很流行的網上支付平台，如果想在網站上提供支付平台，都是很不錯的選擇。其實兩者並不是互斥的，如果實在不知道選哪個好，完全可以同時放在網上讓用戶自己選擇用哪一個。對商家來說，Paypal的用法相對比較簡單，只要把它提供的支付按鈕代碼複製到你的網站就行了，支付的過程會轉到Paypal的網站上完成。而Stripe提供了更多的個性化定制方案，支付的過程不用離開網站，但需要在自己的網站上進行更多的設定，因此相應的缺點就是網站的開發人員需要有一定基本的編寫程式經驗才能順利set up支付過程。但考慮到資費和易用性，個人還是比較傾向於使用Stripe作為網站的支付手段。</p>
+    </main>
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+    var sc_project=11180756; 
+    var sc_invisible=1; 
+    var sc_security="fb3fc8b6"; 
+    var scJsHost = (("https:" == document.location.protocol) ?
+    "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="shopify
+    analytics" href="http://statcounter.com/shopify/"
+    target="_blank"><img class="statcounter"
+    src="//c.statcounter.com/11180756/0/fb3fc8b6/1/"
+    alt="shopify analytics"></a></div></noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+  </body>
+</html>
